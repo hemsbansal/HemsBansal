@@ -180,27 +180,3 @@ a.live:hover { color: var(--accent); }
 .incidents b { font-weight: 600; }
 .incidents p { color: var(--muted); font-size: 0.94rem; margin-top: 4px; }
 @media (max-width: 520px) { .incidents li { grid-template-columns: 1fr; gap: 6px; } }
-
-/* Story */
-.lede { font-size: 1.15rem; line-height: 1.6; max-width: 56ch; }
-.chapters { list-style: none; margin: 0; padding: 0; display: grid; position: relative; }
-.chapters::before { content: ""; position: absolute; left: 4px; top: 10px; bottom: 10px; width: 1px; background: var(--line); }
-.chapters li { position: relative; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; padding: 0 0 28px 28px; }
-.chapters li:last-child { padding-bottom: 0; }
-.chapters li::before { content: ""; position: absolute; left: 0; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 1px solid var(--faint); }
-.chapters li:last-child::before { background: var(--accent); border-color: var(--accent); }
-.chapters .when { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); padding-top: 4px; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.chapters h3 { margin: 0 0 4px; font-size: 1.02rem; font-weight: 600; }
-.chapters p { color: var(--muted); font-size: 0.96rem; max-width: 60ch; }
-.how { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-.how li { color: var(--muted); max-width: 62ch; }
-.how b { color: var(--fg); font-weight: 600; }
-@media (max-width: 520px) {
-  .chapters li { grid-template-columns: 1fr; gap: 2px; padding-left: 24px; }
-}
-.chapters li.turn::before { border-color: var(--accent); box-shadow: 0 0 0 4px var(--tint); }
-.chapters li.turn .when { color: var(--accent); }
-.chapters li.now::before { background: var(--accent); border-color: var(--accent); }
-.chapters li:last-child::before { background: var(--accent); border-color: var(--accent); }
-.stats { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; font-family: var(--mono); font-size: 0.74rem; color: var(--muted); }
-.stats b { color: var(--accent); font-weight: 500; }
