@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ringing through Do Not Disturb · Hemant Bansal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Getting a critical alert heard on a phone that is set to stay quiet.">
+<link rel="canonical" href="https://hemsbansal.in/notes/do-not-disturb.html">
+<meta property="og:title" content="Ringing through Do Not Disturb · Hemant Bansal">
+<meta property="og:description" content="Getting a critical alert heard on a phone that is set to stay quiet.">
+<meta property="og:url" content="https://hemsbansal.in/notes/do-not-disturb.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f6f4a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff' text-anchor='middle'%3Eh%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page">
+  <a class="back" href="../index.html">← Hemant Bansal</a>
+  <article>
+    <h1>Ringing through Do Not Disturb</h1>
+    <div class="meta">Oct 2026 · 3 min read</div>
+
+    <p>Most apps should be quiet when your phone is on silent. An on-call app is the exception. If production is down at 3am, the engineer on call needs to hear it, even if their phone is set to Do Not Disturb.</p>
+
+    <h2>Phones are built to stay quiet</h2>
+    <p>That is a good default. Operating systems work hard to stop apps from making noise when the user asked for quiet, so getting through is not something an app can just decide to do. On Android, an app has to ask the user for Do Not Disturb access, and its alerts have to go through a notification channel that is allowed to bypass it.</p>
+
+    <h2>What I had to get right</h2>
+    <ul>
+      <li>Ask for the permission at the right moment, with a clear reason, so people actually grant it.</li>
+      <li>Keep critical alerts separate from everything else, so only incidents break through and ordinary updates stay quiet.</li>
+      <li>Make sure the alert still arrives when the app is in the background or closed.</li>
+      <li>Let people acknowledge, escalate or resolve the incident straight from the alert.</li>
+    </ul>
+
+    <p class="pull">The feature is a promise: if something is on fire, this app will wake you up.</p>
+
+    <p>It is also a feature you can't half-test. I tested it on real phones, set to silent, locked, with the app closed, because that is exactly the situation it exists for.</p>
+  </article>
+  <footer><a class="back" href="../index.html">← All notes</a></footer>
+</main>
+</body>
+</html>
