@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bugs I've loved · Hemant Bansal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A running list of strange mobile bugs Hemant Bansal has hunted down.">
+<link rel="canonical" href="https://hemsbansal.in/bugs">
+<meta property="og:title" content="Bugs I've loved · Hemant Bansal">
+<meta property="og:description" content="A running list of strange mobile bugs Hemant Bansal has hunted down.">
+<meta property="og:url" content="https://hemsbansal.in/bugs">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f6f4a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff' text-anchor='middle'%3Eh%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page">
+  <a class="back" href="../index.html">← Hemant Bansal</a>
+  <article>
+    <h1>Bugs I've loved</h1>
+    <p class="muted">A running list of the strange ones. Most only showed up on real phones.</p>
+  </article>
+
+  <ol class="bugs">
+    <li>
+      <h3>The microphone that crashed with earbuds in</h3>
+      <p>Our speech-to-text library crashed on Android, but only with Bluetooth audio connected. Fixed with two null checks inside the library, using an unmerged fix from a GitHub issue. <a href="../notes/bluetooth-null-checks.html">Read the note</a></p>
+      <span class="tag">fixed · Android · native</span>
+    </li>
+    <li>
+      <h3>Eight seconds of silence</h3>
+      <p>The voice agent worked, but every step waited for the one before it. Streaming each step, then moving to the OpenAI Realtime API, brought it to about 1.5 seconds. <a href="../notes/voice-latency.html">Read the note</a></p>
+      <span class="tag">fixed · latency</span>
+    </li>
+    <li>
+      <h3>Human voices, slower answers</h3>
+      <p>Swapping robotic device voices for ElevenLabs and PlayHT made the agent sound great and made it slow again. Streaming the audio fixed it.</p>
+      <span class="tag">fixed · trade-off</span>
+    </li>
+    <li>
+      <h3>"Am I online?"</h3>
+      <p>The connection status we relied on was not accurate enough for a live voice call. I wrote a custom <code>useNetwork</code> hook that tracks the connection in real time.</p>
+      <span class="tag">fixed · React hook</span>
+    </li>
+    <li>
+      <h3>Long sentences, noisy rooms, wrong language</h3>
+      <p>Android speech-to-text crashed on long recordings, struggled with background noise and sometimes guessed the wrong language. No single fix: I worked through them one at a time.</p>
+      <span class="tag">fixed, slowly · Android</span>
+    </li>
+    <li>
+      <h3>A beta with opinions</h3>
+      <p>Running the OpenAI Realtime API in beta for months meant handling noise, conversations that switch languages halfway, and a model that did not always follow its instructions.</p>
+      <span class="tag">tamed · AI</span>
+    </li>
+    <li>
+      <h3>The alert that had to be heard</h3>
+      <p>Not a bug, but the same kind of fight: making critical alerts ring on a phone set to Do Not Disturb. <a href="../notes/do-not-disturb.html">Read the note</a></p>
+      <span class="tag">shipped · Android</span>
+    </li>
+  </ol>
+  <footer><a class="back" href="../index.html">← Home</a></footer>
+</main>
+</body>
+</html>

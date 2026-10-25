@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>From 8 seconds to 1.5 · Hemant Bansal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="What it took to make a mobile voice agent feel like a conversation.">
+<link rel="canonical" href="https://hemsbansal.in/notes/voice-latency.html">
+<meta property="og:title" content="From 8 seconds to 1.5 · Hemant Bansal">
+<meta property="og:description" content="What it took to make a mobile voice agent feel like a conversation.">
+<meta property="og:url" content="https://hemsbansal.in/notes/voice-latency.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f6f4a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff' text-anchor='middle'%3Eh%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page">
+  <a class="back" href="../index.html">← Hemant Bansal</a>
+  <article>
+    <h1>From 8 seconds to 1.5</h1>
+    <div class="meta">Oct 2026 · 4 min read</div>
+
+    <p>The first version of our voice agent worked. You spoke, it listened, it answered. It just took about eight seconds to answer, and eight seconds of silence on a phone feels like the app has frozen.</p>
+
+    <h2>Waiting for every step</h2>
+    <p>The pipeline was three steps in a row: speech to text, a call to the language model, then text to speech. Each step waited for the one before it to finish completely. The user's sentence had to be fully transcribed before the model saw it, and the model's whole reply had to exist before we started speaking it.</p>
+
+    <figure class="timing">
+      <div>
+        <h3>Step by step <b>~8s</b></h3>
+        <div class="track">
+          <div class="bar" style="left:0;width:30%">speech → text</div>
+          <div class="bar" style="left:30%;width:38%">model</div>
+          <div class="bar" style="left:68%;width:32%">text → speech</div>
+        </div>
+      </div>
+      <div>
+        <h3>Streaming <b>~1.5s</b></h3>
+        <div class="track"><div class="bar" style="left:0;width:10%">stt</div></div>
+        <div class="track"><div class="bar" style="left:4%;width:10%">llm</div></div>
+        <div class="track"><div class="bar" style="left:8%;width:11%">tts</div></div>
+        <div class="scale"><span>0s</span><span>2s</span><span>4s</span><span>6s</span><span>8s</span></div>
+      </div>
+      <figcaption>stt = speech to text, llm = the model, tts = text to speech. Time until the user hears the first word. This shows the shape of the change, not exact measurements.</figcaption>
+    </figure>
+
+    <h2>Streaming everything</h2>
+    <p>The fix was to stop waiting. I switched all three steps to streaming: partial transcripts went to the model as they arrived, and the model's words went to the voice as soon as it produced them. The steps now overlap instead of queueing.</p>
+
+    <h2>Then the voice sounded like a robot</h2>
+    <p>Faster was not enough. We were using the phone's built-in voices, and people noticed. Moving to ElevenLabs and PlayHT made the agent sound human, but it added latency back, so I had to stream that step too.</p>
+
+    <h2>Betting on a beta</h2>
+    <p>When the OpenAI Realtime API came out, it handled speech in and speech out in one connection. We moved to it while it was still in beta and ran on it for months. It cut latency a lot, and it brought its own problems: background noise, conversations that switch languages halfway, and getting the model to stick to its instructions.</p>
+
+    <p class="pull">Most of the work was not one big fix. It was removing one wait at a time.</p>
+
+    <p>We ended at about 1.5 seconds from the user stopping to the agent starting to speak.</p>
+  </article>
+  <footer><a class="back" href="../index.html">← All notes</a></footer>
+</main>
+</body>
+</html>

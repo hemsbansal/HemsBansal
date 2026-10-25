@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Two null checks · Hemant Bansal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The Bluetooth crash that taught me to read other people's code.">
+<link rel="canonical" href="https://hemsbansal.in/notes/bluetooth-null-checks.html">
+<meta property="og:title" content="Two null checks · Hemant Bansal">
+<meta property="og:description" content="The Bluetooth crash that taught me to read other people's code.">
+<meta property="og:url" content="https://hemsbansal.in/notes/bluetooth-null-checks.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f6f4a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff' text-anchor='middle'%3Eh%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="page">
+  <a class="back" href="../index.html">← Hemant Bansal</a>
+  <article>
+    <h1>Two null checks</h1>
+    <div class="meta">Oct 2026 · 3 min read</div>
+
+    <p>A few months into React Native, I was still mostly copying patterns I didn't fully understand. Then our speech-to-text library started crashing, but only for some users.</p>
+
+    <h2>Only with Bluetooth</h2>
+    <p>It took a while to see the pattern. The app crashed on Android when the user had Bluetooth audio connected: earbuds, a headset, a car. With the phone's own microphone, everything worked. Most of our testing had been done without anything connected, which is why we hadn't seen it.</p>
+
+    <h2>Somebody already knew</h2>
+    <p>The library was open source, so I went looking through its GitHub issues. Someone had hit the same crash and posted a fix. It had never been merged.</p>
+    <p>The fix itself was small: two null checks in the library's native Android code, in places where it assumed an audio device would always be there. With Bluetooth, sometimes it wasn't.</p>
+
+    <h2>Patching code I didn't own</h2>
+    <p>I couldn't wait for the maintainers, so I patched the library inside <code>node_modules</code> directly and kept the change with our project so it survived fresh installs. It felt wrong at first, editing someone else's code. It was also the moment React Native stopped feeling like a black box.</p>
+
+    <p class="pull">The crash wasn't in our code, but it was still our problem.</p>
+
+    <p>That fix was my first real breakthrough as a mobile developer. Since then, when something breaks deep in a dependency, my first move is to open the source and read it.</p>
+  </article>
+  <footer><a class="back" href="../index.html">← All notes</a></footer>
+</main>
+</body>
+</html>

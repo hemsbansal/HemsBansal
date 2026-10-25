@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hemant Bansal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Hemant Bansal builds mobile apps and voice AI from Jaipur, India.">
+<link rel="canonical" href="https://hemsbansal.in/">
+<meta property="og:title" content="Hemant Bansal">
+<meta property="og:description" content="Hemant Bansal builds mobile apps and voice AI from Jaipur, India.">
+<meta property="og:url" content="https://hemsbansal.in/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f6f4a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff' text-anchor='middle'%3Eh%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+  <header class="hello">
+    <h1 class="name">Hemant <em>Bansal</em></h1>
+    <p>Hi, I'm Hemant. I build mobile apps and voice AI from Jaipur, India.</p>
+    <p class="muted">I started as an intern writing web code, switched to React Native with two tiny apps behind me, and struggled for months. These days I lead a small team and spend most of my time making AI voices answer quickly and sound human.</p>
+    <p class="muted">My favourite bugs are the ones that only show up on real phones: a Bluetooth headset, a weak network, a phone on silent.</p>
+    <span class="live"><i></i>Open to new work</span>
+  </header>
+
+  <section aria-labelledby="now">
+    <h2 class="label" id="now">Now · Oct 2026</h2>
+    <ul class="now">
+      <li>Leading a team of five across mobile, web and AI.</li>
+      <li>Making voice agents hold up across languages and noisy rooms.</li>
+      <li>Looking for my next senior mobile or full-stack role, in India or remote.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="notes">
+    <h2 class="label" id="notes">Notes</h2>
+    <ul class="rows">
+      <li><a href="notes/voice-latency.html">From 8 seconds to 1.5</a><span class="meta">Oct 2026</span><span class="desc">What it took to make a voice agent feel like a conversation.</span></li>
+      <li><a href="notes/bluetooth-null-checks.html">Two null checks</a><span class="meta">Oct 2026</span><span class="desc">The Bluetooth crash that taught me to read other people's code.</span></li>
+      <li><a href="notes/do-not-disturb.html">Ringing through Do Not Disturb</a><span class="meta">Oct 2026</span><span class="desc">Getting an alert heard on a phone that's set to stay quiet.</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="built">
+    <h2 class="label" id="built">Things I've built</h2>
+    <ul class="rows">
+      <li><span>A voice coach you can talk to</span><span class="meta">React Native · AI</span><span class="desc">Real-time, multilingual coaching conversations on iOS and Android.</span></li>
+      <li><span>An on-call app for incidents</span><span class="meta">React Native</span><span class="desc">Alerts that wake you up, plus acknowledge, escalate and resolve from your phone.</span></li>
+      <li><span>A device testing platform</span><span class="meta">React · Node.js</span><span class="desc">Upload an app build and run automated tests on real cloud devices.</span></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="more">
+    <h2 class="label" id="more">More</h2>
+    <div class="more">
+      <a href="resume/index.html">Resume</a>
+      <a href="uses/index.html">Uses</a>
+      <a href="bugs/index.html">Bugs I've loved</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="else">
+    <h2 class="label" id="else">Elsewhere</h2>
+    <div class="elsewhere">
+      <a href="https://github.com/hemsbansal" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/hemsbansal" target="_blank" rel="noopener">LinkedIn</a>
+      <span><a href="mailto:bansalhemant55@gmail.com" id="email">bansalhemant55@gmail.com</a> <button class="copy" id="copy-email" type="button">Copy</button></span>
+    </div>
+  </section>
+
+  <footer>hemsbansal.in · made by hand</footer>
+</main>
+<script>
+document.getElementById('copy-email').addEventListener('click', function () {
+  var b = this, el = document.getElementById('email');
+  function done(t) { b.textContent = t; setTimeout(function () { b.textContent = 'Copy'; }, 1600); }
+  function sel() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected'); }
+  try { navigator.clipboard.writeText(el.textContent).then(function () { done('Copied'); }, sel); } catch (e) { sel(); }
+});
+</script>
+</body>
+</html>
