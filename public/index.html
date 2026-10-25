@@ -12,32 +12,43 @@
 <meta property="og:url" content="https://hemsbansal.in/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f6f4a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff' text-anchor='middle'%3Eh%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="theme-color" content="#1f6f4a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="page">
   <header class="hello">
-    <h1 class="name">Hemant <em>Bansal</em></h1>
-    <p>Hi, I'm Hemant. I build mobile apps and voice AI from Jaipur, India.</p>
-    <p class="muted">I started as an intern writing web code, switched to React Native with two tiny apps behind me, and struggled for months. These days I lead a small team and spend most of my time making AI voices answer quickly and sound human.</p>
-    <p class="muted">My favourite bugs are the ones that only show up on real phones: a Bluetooth headset, a weak network, a phone on silent.</p>
-    <span class="live"><i></i>Open to new work</span>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-set-lang="hi" aria-pressed="false" lang="hi">हिं</button>
+    </div>
+    <h1 class="name" id="name" title="Hemant Bansal">Hemant <em>Bansal</em></h1>
+    <p data-en>Hi, I'm Hemant. I build mobile apps and voice AI from Jaipur, India.</p>
+    <p data-hi lang="hi">नमस्ते, मैं हेमंत हूँ। मैं जयपुर से मोबाइल ऐप और वॉइस AI बनाता हूँ।</p>
+    <p class="muted" data-en>I started as an intern writing web code, switched to React Native with two tiny apps behind me, and struggled for months. These days I lead a small team and spend most of my time making AI voices answer quickly and sound human.</p>
+    <p class="muted" data-hi lang="hi">मैंने इंटर्न के तौर पर वेब कोड लिखने से शुरुआत की, फिर सिर्फ़ दो छोटे ऐप्स के अनुभव के साथ React Native पर आया और कई महीनों तक जूझता रहा। आज मैं एक छोटी टीम लीड करता हूँ और ज़्यादातर समय AI आवाज़ों को तेज़ और इंसानों जैसा बनाने में लगाता हूँ।</p>
+    <p class="muted" data-en>My favourite bugs are the ones that only show up on real phones: a Bluetooth headset, a weak network, a phone on silent.</p>
+    <p class="muted" data-hi lang="hi">मुझे वो बग सबसे पसंद हैं जो सिर्फ़ असली फ़ोन पर दिखते हैं: ब्लूटूथ हेडसेट, कमज़ोर नेटवर्क, साइलेंट पर रखा फ़ोन।</p>
+    <a class="live" href="status/index.html"><i></i><span data-en>Open to new work</span><span data-hi lang="hi">नए काम के लिए उपलब्ध</span></a>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   </header>
 
   <section aria-labelledby="now">
-    <h2 class="label" id="now">Now · Oct 2026</h2>
+    <h2 class="label" id="now"><span data-en>Now · Oct 2026</span><span data-hi lang="hi">अभी · अक्टूबर 2026</span></h2>
     <ul class="now">
-      <li>Leading a team of five across mobile, web and AI.</li>
-      <li>Making voice agents hold up across languages and noisy rooms.</li>
-      <li>Looking for my next senior mobile or full-stack role, in India or remote.</li>
+      <li><span data-en>Leading a team of five across mobile, web and AI.</span><span data-hi lang="hi">मोबाइल, वेब और AI में पाँच लोगों की टीम लीड कर रहा हूँ।</span></li>
+      <li><span data-en>Making voice agents hold up across languages and noisy rooms.</span><span data-hi lang="hi">वॉइस एजेंट्स को अलग-अलग भाषाओं और शोर वाली जगहों में भरोसेमंद बना रहा हूँ।</span></li>
+      <li><span data-en>Looking for my next senior mobile or full-stack role, in India or remote.</span><span data-hi lang="hi">भारत में या रिमोट, अपने अगले सीनियर मोबाइल या फ़ुल-स्टैक रोल की तलाश में हूँ।</span></li>
     </ul>
   </section>
 
   <section aria-labelledby="notes">
-    <h2 class="label" id="notes">Notes</h2>
+    <h2 class="label" id="notes"><span data-en>Notes</span><span data-hi lang="hi">नोट्स · अंग्रेज़ी में</span></h2>
     <ul class="rows">
       <li><a href="notes/voice-latency.html">From 8 seconds to 1.5</a><span class="meta">Oct 2026</span><span class="desc">What it took to make a voice agent feel like a conversation.</span></li>
       <li><a href="notes/bluetooth-null-checks.html">Two null checks</a><span class="meta">Oct 2026</span><span class="desc">The Bluetooth crash that taught me to read other people's code.</span></li>
@@ -46,7 +57,7 @@
   </section>
 
   <section aria-labelledby="built">
-    <h2 class="label" id="built">Things I've built</h2>
+    <h2 class="label" id="built"><span data-en>Things I've built at work</span><span data-hi lang="hi">काम पर क्या बनाया</span></h2>
     <ul class="rows">
       <li><span>A voice coach you can talk to</span><span class="meta">React Native · AI</span><span class="desc">Real-time, multilingual coaching conversations on iOS and Android.</span></li>
       <li><span>An on-call app for incidents</span><span class="meta">React Native</span><span class="desc">Alerts that wake you up, plus acknowledge, escalate and resolve from your phone.</span></li>
@@ -54,17 +65,27 @@
     </ul>
   </section>
 
+  <section aria-labelledby="side">
+    <h2 class="label" id="side"><span data-en>Side projects</span><span data-hi lang="hi">साइड प्रोजेक्ट्स</span></h2>
+    <ul class="rows">
+      <li><a href="https://github.com/hemsbansal/skribbl_retro" target="_blank" rel="noopener">Skribbl Arcade</a><span class="meta">Node.js · Socket.IO</span><span class="desc">A retro, multiplayer draw-and-guess game with live emoji reactions. Type 67 in chat and the screen shakes.</span></li>
+      <li><span>ByteLaugh</span><span class="meta">Mobile app</span><span class="desc">A small app I built on my own.</span></li>
+      <li><span>The Torch</span><span class="meta">Mobile app</span><span class="desc">Another app of mine.</span></li>
+    </ul>
+  </section>
+
   <section aria-labelledby="more">
-    <h2 class="label" id="more">More</h2>
+    <h2 class="label" id="more"><span data-en>More</span><span data-hi lang="hi">और</span></h2>
     <div class="more">
       <a href="resume/index.html">Resume</a>
       <a href="uses/index.html">Uses</a>
       <a href="bugs/index.html">Bugs I've loved</a>
+      <a href="status/index.html">Status</a>
     </div>
   </section>
 
   <section aria-labelledby="else">
-    <h2 class="label" id="else">Elsewhere</h2>
+    <h2 class="label" id="else"><span data-en>Elsewhere</span><span data-hi lang="hi">यहाँ भी मिलूँगा</span></h2>
     <div class="elsewhere">
       <a href="https://github.com/hemsbansal" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/in/hemsbansal" target="_blank" rel="noopener">LinkedIn</a>
@@ -74,13 +95,6 @@
 
   <footer>hemsbansal.in · made by hand</footer>
 </main>
-<script>
-document.getElementById('copy-email').addEventListener('click', function () {
-  var b = this, el = document.getElementById('email');
-  function done(t) { b.textContent = t; setTimeout(function () { b.textContent = 'Copy'; }, 1600); }
-  function sel() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected'); }
-  try { navigator.clipboard.writeText(el.textContent).then(function () { done('Copied'); }, sel); } catch (e) { sel(); }
-});
-</script>
+<script src="site.js" defer></script>
 </body>
 </html>

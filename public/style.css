@@ -7,6 +7,10 @@
   --line: #e4e5e1;
   --accent: #1f6f4a;
   --tint: rgba(31, 111, 74, 0.09);
+  --ok-bar: #6fbf93;
+  --warn-bar: #e2b54d;
+  --warn: #8a6200;
+  --warn-tint: rgba(196, 140, 20, 0.14);
   --display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -14,12 +18,12 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #111312; --fg: #e9eae7; --muted: #a2a6a0; --faint: #6e726d; --line: #262927;
-    --accent: #7fd1a3; --tint: rgba(127, 209, 163, 0.1); color-scheme: dark;
+    --accent: #7fd1a3; --tint: rgba(127, 209, 163, 0.1); --ok-bar: #3f8f66; --warn-bar: #b9902f; --warn: #e8c46a; --warn-tint: rgba(232, 196, 106, 0.12); color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #111312; --fg: #e9eae7; --muted: #a2a6a0; --faint: #6e726d; --line: #262927;
-  --accent: #7fd1a3; --tint: rgba(127, 209, 163, 0.1); color-scheme: dark;
+  --accent: #7fd1a3; --tint: rgba(127, 209, 163, 0.1); --ok-bar: #3f8f66; --warn-bar: #b9902f; --warn: #e8c46a; --warn-tint: rgba(232, 196, 106, 0.12); color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -140,3 +144,39 @@ pre code { background: none; padding: 0; font-size: 0.8rem; line-height: 1.6; }
 
 /* Small link row */
 .more { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+
+/* Language switch */
+.lang { justify-self: start; display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; gap: 2px; }
+.lang button { font: inherit; font-family: var(--mono); font-size: 0.72rem; color: var(--muted); background: none; border: 0; border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+[data-hi] { display: none; }
+html[data-lang="hi"] [data-hi] { display: revert; }
+html[data-lang="hi"] [data-en] { display: none; }
+[data-hi], .lang [lang="hi"] { font-family: "Noto Sans Devanagari", var(--sans); }
+.label [data-hi] { font-family: "Noto Sans Devanagari", var(--sans); letter-spacing: 0; text-transform: none; font-size: 0.8rem; }
+a.live { text-decoration: none; justify-self: start; }
+a.live:hover { color: var(--accent); }
+
+/* Easter egg toast */
+#name { cursor: default; user-select: none; }
+.toast { justify-self: start; font-family: var(--mono); font-size: 0.78rem; line-height: 1.5; padding: 10px 14px; border-radius: 8px; background: var(--fg); color: var(--bg); max-width: 52ch; }
+
+/* Status page */
+.status-banner { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 10px; background: var(--tint); color: var(--accent); font-weight: 600; }
+.status-banner i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); animation: pulse 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .status-banner i { animation: none; } }
+.systems, .incidents { list-style: none; margin: 0; padding: 0; display: grid; }
+.systems li, .incidents li { padding: 14px 0; border-top: 1px solid var(--line); }
+.systems li:last-child, .incidents li:last-child { border-bottom: 1px solid var(--line); }
+.sys-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.uptime { display: grid; grid-template-columns: repeat(30, minmax(0, 1fr)); gap: 3px; margin-top: 10px; }
+.uptime i { height: 26px; border-radius: 3px; background: var(--ok-bar); }
+.uptime i.w { background: var(--warn-bar); }
+.pill { font-family: var(--mono); font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; background: var(--tint); color: var(--muted); white-space: nowrap; }
+.pill.ok { color: var(--accent); }
+.pill.warn { background: var(--warn-tint); color: var(--warn); }
+.incidents li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 14px; align-items: start; }
+.incidents .pill { justify-self: start; margin-top: 2px; }
+.incidents b { font-weight: 600; }
+.incidents p { color: var(--muted); font-size: 0.94rem; margin-top: 4px; }
+@media (max-width: 520px) { .incidents li { grid-template-columns: 1fr; gap: 6px; } }
