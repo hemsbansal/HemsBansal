@@ -198,3 +198,9 @@ a.live:hover { color: var(--accent); }
 @media (max-width: 520px) {
   .chapters li { grid-template-columns: 1fr; gap: 2px; padding-left: 24px; }
 }
+.chapters li.turn::before { border-color: var(--accent); box-shadow: 0 0 0 4px var(--tint); }
+.chapters li.turn .when { color: var(--accent); }
+.chapters li.now::before { background: var(--accent); border-color: var(--accent); }
+.chapters li:last-child::before { background: var(--accent); border-color: var(--accent); }
+.stats { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; font-family: var(--mono); font-size: 0.74rem; color: var(--muted); }
+.stats b { color: var(--accent); font-weight: 500; }
