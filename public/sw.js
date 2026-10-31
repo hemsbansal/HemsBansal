@@ -1,10 +1,10 @@
 // Offline support for hemsbansal.in. Bump VERSION when you want every visitor to refresh their cache.
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE = 'hemsbansal-' + VERSION;
 const PAGES = [
   '/', '/index.html', '/style.css', '/site.js', '/manifest.webmanifest',
   '/notes/voice-latency.html', '/notes/bluetooth-null-checks.html', '/notes/do-not-disturb.html',
-  '/resume/', '/uses/', '/bugs/', '/status/', '/404.html',
+  '/resume/', '/uses/', '/bugs/', '/404.html',
   '/icons/icon-192.png', '/icons/icon-512.png'
 ];
 

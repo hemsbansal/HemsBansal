@@ -54,13 +54,13 @@
     <h2>Streaming everything</h2>
     <p>The fix was to stop waiting. I switched all three steps to streaming: partial transcripts went to the model as they arrived, and the model's words went to the voice as soon as it produced them. The steps now overlap instead of queueing.</p>
 
-    <h2>Then the voice sounded like a robot</h2>
-    <p>Faster was not enough. We were using the phone's built-in voices, and people noticed. Moving to ElevenLabs and PlayHT made the agent sound human, but it added latency back, so I had to stream that step too.</p>
+    <h2>Better voices</h2>
+    <p>We were using the phone's built-in voices, and they sounded robotic. Moving to ElevenLabs and PlayHT made the agent sound human, but it added latency back, so I had to stream that step too.</p>
 
-    <h2>Betting on a beta</h2>
+    <h2>Moving to the Realtime API</h2>
     <p>When the OpenAI Realtime API came out, it handled speech in and speech out in one connection. We moved to it while it was still in beta and ran on it for months. It cut latency a lot, and it brought its own problems: background noise, conversations that switch languages halfway, and getting the model to stick to its instructions.</p>
 
-    <p class="pull">Most of the work was not one big fix. It was removing one wait at a time.</p>
+    <p>Most of the work was not one big fix. It was removing one wait at a time.</p>
 
     <p>We ended at about 1.5 seconds from the user stopping to the agent starting to speak.</p>
   </article>

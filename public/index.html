@@ -32,9 +32,9 @@
     <p data-hi lang="hi">नमस्ते, मैं हेमंत हूँ। मैं जयपुर से मोबाइल ऐप और वॉइस AI बनाता हूँ।</p>
     <p class="muted" data-en>I started as an intern in 2021, doing web and full-stack work, and moved to React Native in 2024. Today I lead a small team and spend most of my time making AI voices answer quickly and sound human.</p>
     <p class="muted" data-hi lang="hi">मैंने 2021 में इंटर्न के तौर पर वेब और फ़ुल-स्टैक काम से शुरुआत की, और 2024 में React Native पर आया। आज मैं एक छोटी टीम लीड करता हूँ और ज़्यादातर समय AI आवाज़ों को तेज़ और इंसानों जैसा बनाने में लगाता हूँ।</p>
-    <p class="muted" data-en>My favourite bugs are the ones that only show up on real phones: a Bluetooth headset, a weak network, a phone on silent.</p>
-    <p class="muted" data-hi lang="hi">मुझे वो बग सबसे पसंद हैं जो सिर्फ़ असली फ़ोन पर दिखते हैं: ब्लूटूथ हेडसेट, कमज़ोर नेटवर्क, साइलेंट पर रखा फ़ोन।</p>
-    <a class="live" href="status/index.html"><i></i><span data-en>Open to new work</span><span data-hi lang="hi">नए काम के लिए उपलब्ध</span></a>
+    <p class="muted" data-en>Most of the problems I enjoy only show up on real phones: Bluetooth audio, weak networks, a phone on silent.</p>
+    <p class="muted" data-hi lang="hi">मुझे सबसे दिलचस्प समस्याएँ वो लगती हैं जो सिर्फ़ असली फ़ोन पर दिखती हैं: ब्लूटूथ ऑडियो, कमज़ोर नेटवर्क, साइलेंट पर रखा फ़ोन।</p>
+    <a class="live" href="#else"><i></i><span data-en>Open to new work</span><span data-hi lang="hi">नए काम के लिए उपलब्ध</span></a>
     <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   </header>
 
@@ -51,26 +51,18 @@
     <h2 class="label" id="notes"><span data-en>Notes</span><span data-hi lang="hi">नोट्स · अंग्रेज़ी में</span></h2>
     <ul class="rows">
       <li><a href="notes/voice-latency.html">From 8 seconds to 1.5</a><span class="meta">Oct 2026</span><span class="desc">What it took to make a voice agent feel like a conversation.</span></li>
-      <li><a href="notes/bluetooth-null-checks.html">Two null checks</a><span class="meta">Oct 2026</span><span class="desc">The Bluetooth crash that taught me to read other people's code.</span></li>
+      <li><a href="notes/bluetooth-null-checks.html">Two null checks</a><span class="meta">Oct 2026</span><span class="desc">A crash that only happened with Bluetooth audio connected.</span></li>
       <li><a href="notes/do-not-disturb.html">Ringing through Do Not Disturb</a><span class="meta">Oct 2026</span><span class="desc">Getting an alert heard on a phone that's set to stay quiet.</span></li>
     </ul>
   </section>
 
   <section aria-labelledby="built">
-    <h2 class="label" id="built"><span data-en>Things I've built at work</span><span data-hi lang="hi">काम पर क्या बनाया</span></h2>
+    <h2 class="label" id="built"><span data-en>Things I've built</span><span data-hi lang="hi">मैंने क्या बनाया</span></h2>
     <ul class="rows">
-      <li><span>A voice coach you can talk to</span><span class="meta">React Native · AI</span><span class="desc">Real-time, multilingual coaching conversations on iOS and Android.</span></li>
-      <li><span>An on-call app for incidents</span><span class="meta">React Native</span><span class="desc">Alerts that wake you up, plus acknowledge, escalate and resolve from your phone.</span></li>
-      <li><span>A device testing platform</span><span class="meta">React · Node.js</span><span class="desc">Upload an app build and run automated tests on real cloud devices.</span></li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="side">
-    <h2 class="label" id="side"><span data-en>Side projects</span><span data-hi lang="hi">साइड प्रोजेक्ट्स</span></h2>
-    <ul class="rows">
-      <li><a href="https://github.com/hemsbansal/skribbl_retro" target="_blank" rel="noopener">Skribbl Arcade</a><span class="meta">Node.js · Socket.IO</span><span class="desc">A retro, multiplayer draw-and-guess game with live emoji reactions. Type 67 in chat and the screen shakes.</span></li>
-      <li><span>ByteLaugh</span><span class="meta">Mobile app</span><span class="desc">A small app I built on my own.</span></li>
-      <li><span>The Torch</span><span class="meta">Mobile app</span><span class="desc">Another app of mine.</span></li>
+      <li><span>Voice coaching app</span><span class="meta">React Native · AI</span><span class="desc">Real-time, multilingual voice conversations with an AI coach. Response time went from about 8 seconds to about 1.5.</span></li>
+      <li><span>On-call app for incidents</span><span class="meta">React Native</span><span class="desc">Engineers acknowledge, escalate and resolve incidents from their phone. Critical alerts ring through Do Not Disturb.</span></li>
+      <li><span>Device testing platform</span><span class="meta">React · Node.js</span><span class="desc">Upload an app build and run automated tests on real devices in AWS Device Farm and Firebase Test Lab.</span></li>
+      <li><a href="https://github.com/hemsbansal/skribbl_retro" target="_blank" rel="noopener">Skribbl Arcade</a><span class="meta">Side project · Node.js</span><span class="desc">A multiplayer draw-and-guess game with live emoji reactions, built on Socket.IO.</span></li>
     </ul>
   </section>
 
@@ -79,8 +71,7 @@
     <div class="more">
       <a href="resume/index.html">Resume</a>
       <a href="uses/index.html">Uses</a>
-      <a href="bugs/index.html">Bugs I've loved</a>
-      <a href="status/index.html">Status</a>
+      <a href="bugs/index.html">Bug log</a>
     </div>
   </section>
 
@@ -93,7 +84,7 @@
     </div>
   </section>
 
-  <footer>hemsbansal.in · made by hand</footer>
+  <footer>hemsbansal.in</footer>
 </main>
 <script src="site.js" defer></script>
 </body>

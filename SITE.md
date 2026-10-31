@@ -12,8 +12,7 @@ Everything in `public/` is the website. Files outside it (like this file and the
 | `public/notes/` | Short write-ups |
 | `public/resume/` | Resume (prints cleanly) |
 | `public/uses/` | Tools I use |
-| `public/bugs/` | Bugs I've loved |
-| `public/status/` | A playful status page about me |
+| `public/bugs/` | Bug log |
 | `public/404.html` | Not found page |
 | `public/style.css` | Shared styles for every page |
 | `public/site.js` | Shared script: copy button, English/Hindi switch, easter egg, offline support |
