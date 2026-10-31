@@ -27,8 +27,9 @@
   }
 
   // Easter egg: click the name three times to hear the robotic voice I spent months replacing
-  var name = document.getElementById('name'), toast = document.getElementById('toast');
-  if (name && toast) {
+  var toast = document.getElementById('toast');
+  document.querySelectorAll('#name, #m-name').forEach(function (name) {
+  if (toast) {
     var clicks = 0, timer, hideTimer;
     name.addEventListener('click', function () {
       clicks++;
@@ -50,6 +51,7 @@
       hideTimer = setTimeout(function () { toast.hidden = true; }, 5000);
     });
   }
+  });
 
   // A hello for anyone who opens the console
   try {

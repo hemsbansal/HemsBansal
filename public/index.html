@@ -11,81 +11,163 @@
 <meta property="og:description" content="Hemant Bansal builds mobile apps and voice AI from Jaipur, India.">
 <meta property="og:url" content="https://hemsbansal.in/">
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f6f4a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff' text-anchor='middle'%3Eh%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23c2604c'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff' text-anchor='middle'%3Eh%3C/text%3E%3C/svg%3E">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<meta name="theme-color" content="#1f6f4a">
+<meta name="theme-color" content="#f8efeb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1d1312" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="home.css">
 </head>
 <body>
-<main class="page">
-  <header class="hello">
-    <div class="lang" role="group" aria-label="Language">
-      <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
-      <button type="button" data-set-lang="hi" aria-pressed="false" lang="hi">हिं</button>
+<div class="app" id="app">
+
+  <!-- Desktop hero -->
+  <header class="hero desk">
+    <h1 class="name" id="name">Hemant <em>Bansal</em></h1>
+    <div class="hero-side">
+      <p>I build mobile apps and voice AI from Jaipur, India. I lead a small team, and most of my work is making AI voices answer quickly and sound human.</p>
+      <a class="avail" href="#chat"><i></i>Open to senior mobile and full-stack roles · India or remote</a>
     </div>
-    <h1 class="name" id="name" title="Hemant Bansal">Hemant <em>Bansal</em></h1>
-    <p data-en>Hi, I'm Hemant. I build mobile apps and voice AI from Jaipur, India.</p>
-    <p data-hi lang="hi">नमस्ते, मैं हेमंत हूँ। मैं जयपुर से मोबाइल ऐप और वॉइस AI बनाता हूँ।</p>
-    <p class="muted" data-en>I started as an intern in 2021, doing web and full-stack work, and moved to React Native in 2024. Today I lead a small team and spend most of my time making AI voices answer quickly and sound human.</p>
-    <p class="muted" data-hi lang="hi">मैंने 2021 में इंटर्न के तौर पर वेब और फ़ुल-स्टैक काम से शुरुआत की, और 2024 में React Native पर आया। आज मैं एक छोटी टीम लीड करता हूँ और ज़्यादातर समय AI आवाज़ों को तेज़ और इंसानों जैसा बनाने में लगाता हूँ।</p>
-    <p class="muted" data-en>Most of the problems I enjoy only show up on real phones: Bluetooth audio, weak networks, a phone on silent.</p>
-    <p class="muted" data-hi lang="hi">मुझे सबसे दिलचस्प समस्याएँ वो लगती हैं जो सिर्फ़ असली फ़ोन पर दिखती हैं: ब्लूटूथ ऑडियो, कमज़ोर नेटवर्क, साइलेंट पर रखा फ़ोन।</p>
-    <a class="live" href="#else"><i></i><span data-en>Open to new work</span><span data-hi lang="hi">नए काम के लिए उपलब्ध</span></a>
-    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
   </header>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-  <section aria-labelledby="now">
-    <h2 class="label" id="now"><span data-en>Now · Oct 2026</span><span data-hi lang="hi">अभी · अक्टूबर 2026</span></h2>
-    <ul class="now">
-      <li><span data-en>Leading a team of five across mobile, web and AI.</span><span data-hi lang="hi">मोबाइल, वेब और AI में पाँच लोगों की टीम लीड कर रहा हूँ।</span></li>
-      <li><span data-en>Making voice agents hold up across languages and noisy rooms.</span><span data-hi lang="hi">वॉइस एजेंट्स को अलग-अलग भाषाओं और शोर वाली जगहों में भरोसेमंद बना रहा हूँ।</span></li>
-      <li><span data-en>Looking for my next senior mobile or full-stack role, in India or remote.</span><span data-hi lang="hi">भारत में या रिमोट, अपने अगले सीनियर मोबाइल या फ़ुल-स्टैक रोल की तलाश में हूँ।</span></li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="notes">
-    <h2 class="label" id="notes"><span data-en>Notes</span><span data-hi lang="hi">नोट्स · अंग्रेज़ी में</span></h2>
-    <ul class="rows">
-      <li><a href="notes/voice-latency.html">From 8 seconds to 1.5</a><span class="meta">Oct 2026</span><span class="desc">What it took to make a voice agent feel like a conversation.</span></li>
-      <li><a href="notes/bluetooth-null-checks.html">Two null checks</a><span class="meta">Oct 2026</span><span class="desc">A crash that only happened with Bluetooth audio connected.</span></li>
-      <li><a href="notes/do-not-disturb.html">Ringing through Do Not Disturb</a><span class="meta">Oct 2026</span><span class="desc">Getting an alert heard on a phone that's set to stay quiet.</span></li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="built">
-    <h2 class="label" id="built"><span data-en>Things I've built</span><span data-hi lang="hi">मैंने क्या बनाया</span></h2>
-    <ul class="rows">
-      <li><span>Voice coaching app</span><span class="meta">React Native · AI</span><span class="desc">Real-time, multilingual voice conversations with an AI coach. Response time went from about 8 seconds to about 1.5.</span></li>
-      <li><span>On-call app for incidents</span><span class="meta">React Native</span><span class="desc">Engineers acknowledge, escalate and resolve incidents from their phone. Critical alerts ring through Do Not Disturb.</span></li>
-      <li><span>Device testing platform</span><span class="meta">React · Node.js</span><span class="desc">Upload an app build and run automated tests on real devices in AWS Device Farm and Firebase Test Lab.</span></li>
-      <li><a href="https://github.com/hemsbansal/skribbl_retro" target="_blank" rel="noopener">Skribbl Arcade</a><span class="meta">Side project · Node.js</span><span class="desc">A multiplayer draw-and-guess game with live emoji reactions, built on Socket.IO.</span></li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="more">
-    <h2 class="label" id="more"><span data-en>More</span><span data-hi lang="hi">और</span></h2>
-    <div class="more">
-      <a href="resume/index.html">Resume</a>
-      <a href="uses/index.html">Uses</a>
-      <a href="bugs/index.html">Bug log</a>
+  <!-- Mobile home -->
+  <section class="view" data-view="home" id="home" aria-label="Home">
+    <div class="m-head">
+      <h1 class="m-name" id="m-name">Hemant <em>Bansal</em></h1>
+      <p>Mobile apps &amp; voice AI · Jaipur</p>
+    </div>
+    <div class="group"><a class="row" href="#chat"><span class="ic ok"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg></span><span class="lbl">Open to new work</span><span class="switch" aria-hidden="true"></span></a></div>
+    <h2 class="glabel">Built</h2>
+    <div class="group">
+      <a class="row" href="#t-voice"><span class="ic "><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><span class="lbl">Voice coaching app</span><span class="v">1.5s replies</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+      <a class="row" href="#t-oncall"><span class="ic "><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 21h4"/></svg></span><span class="lbl">On-call app</span><span class="v">2025</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+      <a class="row" href="#t-devices"><span class="ic "><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><span class="lbl">Device testing platform</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+      <a class="row" href="#t-skribbl"><span class="ic "><svg viewBox="0 0 24 24"><path d="M4 18 14 8l2 2L6 20H4zM14 8l3-3 2 2-3 3"/></svg></span><span class="lbl">Skribbl Arcade</span><span class="v">side project</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+    </div>
+    <h2 class="glabel">Read</h2>
+    <div class="group">
+      <a class="row" href="notes/voice-latency.html"><span class="lbl">From 8 seconds to 1.5</span><span class="v">4 min</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+      <a class="row" href="notes/bluetooth-null-checks.html"><span class="lbl">Two null checks</span><span class="v">3 min</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+      <a class="row" href="notes/do-not-disturb.html"><span class="lbl">Ringing through Do Not Disturb</span><span class="v">3 min</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+    </div>
+    <h2 class="glabel">More</h2>
+    <div class="group">
+      <a class="row" href="resume/index.html"><span class="ic "><svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6zM14 2v5h5M9 13h6M9 17h6"/></svg></span><span class="lbl">Resume</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+      <a class="row" href="uses/index.html"><span class="ic "><svg viewBox="0 0 24 24"><path d="M14 6a4 4 0 0 0 5 5l-8 8a2 2 0 0 1-3-3z"/></svg></span><span class="lbl">Tools I use</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+      <a class="row" href="bugs/index.html"><span class="ic "><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="13" rx="5"/><path d="M12 7V4M7 12H3M21 12h-4M7 17l-3 2M17 17l3 2M8 8 6 5M16 8l2-3"/></svg></span><span class="lbl">Bug log</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+      <a class="row" href="https://github.com/hemsbansal" target="_blank" rel="noopener"><span class="ic "><svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-1-2.5c3 0 6-1.5 6-6.5a5 5 0 0 0-1.5-3.5 4.5 4.5 0 0 0-.1-3.5s-1.2-.3-3.6 1.4a12 12 0 0 0-6.6 0C5.8 1.2 4.6 1.5 4.6 1.5a4.5 4.5 0 0 0-.1 3.5A5 5 0 0 0 3 8.5c0 5 3 6.5 6 6.5a3 3 0 0 0-1 2.5V21"/></svg></span><span class="lbl">GitHub</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
+      <a class="row" href="https://linkedin.com/in/hemsbansal" target="_blank" rel="noopener"><span class="ic "><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></span><span class="lbl">LinkedIn</span><span class="chev"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></a>
     </div>
   </section>
 
-  <section aria-labelledby="else">
-    <h2 class="label" id="else"><span data-en>Elsewhere</span><span data-hi lang="hi">यहाँ भी मिलूँगा</span></h2>
-    <div class="elsewhere">
-      <a href="https://github.com/hemsbansal" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/hemsbansal" target="_blank" rel="noopener">LinkedIn</a>
-      <span><a href="mailto:bansalhemant55@gmail.com" id="email">bansalhemant55@gmail.com</a> <button class="copy" id="copy-email" type="button">Copy</button></span>
+  <!-- Route -->
+  <section class="view" data-view="route" id="route" aria-labelledby="route-h">
+    <div class="sec-head"><h2 id="route-h">The route so far</h2><span class="hint desk">One interchange, January 2024</span></div>
+    <div class="map desk" role="img" aria-label="Career map: BCA 2017, learning by cloning 2021, intern September 2021, React Native from January 2024, voice coaching app 2024, on-call app 2025, now leading a team of five.">
+      <svg viewBox="0 0 1000 190" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path class="ln web" d="M40 62 H400 L460 122 H560"/>
+        <path class="ln mobl" d="M560 122 H960"/>
+        <path class="ln side" d="M560 122 V164 H690"/>
+        <g class="stn"><circle cx="60" cy="62" r="8"/><circle cx="190" cy="62" r="8"/><circle cx="320" cy="62" r="8"/><circle cx="700" cy="122" r="8"/><circle cx="830" cy="122" r="8"/><circle cx="690" cy="164" r="6"/></g>
+        <circle class="xchg" cx="560" cy="122" r="14"/><circle class="end" cx="960" cy="122" r="11"/>
+        <text x="40" y="38">BCA</text><text class="y" x="40" y="90">2017</text>
+        <text x="170" y="38">Learning by cloning</text><text class="y" x="170" y="90">2021</text>
+        <text x="300" y="38">Intern · web &amp; full-stack</text><text class="y" x="300" y="90">Sep 2021</text>
+        <text class="b" x="500" y="96">React Native</text><text class="y" x="585" y="112">Jan 2024</text>
+        <a href="#t-voice"><text x="668" y="98">Voice app</text><text class="y" x="668" y="150">2024</text></a>
+        <a href="#t-oncall"><text x="796" y="98">On-call app</text><text class="y" x="800" y="150">Sep 2025</text></a>
+        <text class="b" x="940" y="98">Now</text><text class="y" x="906" y="150">team of five</text>
+        <a href="#t-skribbl"><text class="y" x="702" y="168">side: Skribbl Arcade</text></a>
+      </svg>
+    </div>
+    <ol class="vmap mob"><li class="st "><b>BCA</b><span>2017</span></li><li class="st "><b>Learning by cloning</b><span>Early 2021 · HTML, CSS, JS</span></li><li class="st "><b>Intern, web &amp; full-stack</b><span>Sep 2021 · PHP, Node.js, React</span></li><li class="st x"><b>React Native</b><span>Jan 2024 · interchange</span></li><li class="st "><a href=#t-voice><b>Voice coaching app</b><span>2024 · 8s → 1.5s replies</span></a></li><li class="st "><a href=#t-oncall><b>On-call app</b><span>Sep 2025</span></a></li><li class="st x now"><b>Now: leading a team of five</b><span>Open to new roles</span></li></ol>
+  </section>
+
+  <!-- Passes / tickets -->
+  <section class="view" data-view="passes" id="passes" aria-labelledby="passes-h">
+    <div class="sec-head"><h2 id="passes-h">Things I've built</h2><span class="hint mob">Tap a pass to open it</span></div>
+    <div class="tickets">
+      <article class="ticket t-a open" id="t-voice" tabindex="0">
+        <div class="tk-main">
+          <div class="tk-hd"><span>No. 001 · 2024</span><span>React Native</span></div>
+          <h3>Voice coaching app</h3>
+          <div class="tk-body"><div class="route-line"><b>8.0s</b><span class="dots"></span><b>1.5s</b></div><p class="tk-note">Real-time, multilingual voice conversations with an AI coach. I built the app and led the team as it grew.</p></div>
+        </div>
+        <div class="tk-stub"><span>iOS · Android</span><a href="notes/voice-latency.html">Read the note →</a></div>
+      </article>
+      <article class="ticket t-b" id="t-oncall" tabindex="0">
+        <div class="tk-main">
+          <div class="tk-hd"><span>No. 002 · 2025</span><span>React Native</span></div>
+          <h3>On-call app</h3>
+          <div class="tk-body"><p class="tk-lead">Critical alerts ring through Do Not Disturb.</p><p class="tk-note">Engineers acknowledge, escalate and resolve incidents from their phone. I built the whole app.</p></div>
+        </div>
+        <div class="tk-stub"><span>iOS · Android</span><a href="notes/do-not-disturb.html">Read the note →</a></div>
+      </article>
+      <article class="ticket t-c" id="t-devices" tabindex="0">
+        <div class="tk-main">
+          <div class="tk-hd"><span>No. 003</span><span>React · Node.js</span></div>
+          <h3>Device testing platform</h3>
+          <div class="tk-body"><p class="tk-lead">Automated tests on real devices in the cloud.</p><p class="tk-note">Upload an app build, run tests on AWS Device Farm and Firebase Test Lab, and track results in one dashboard.</p></div>
+        </div>
+        <div class="tk-stub"><span>Web</span><a href="resume/index.html">On my resume →</a></div>
+      </article>
+      <article class="ticket t-d" id="t-skribbl" tabindex="0">
+        <div class="tk-main">
+          <div class="tk-hd"><span>No. 004 · Side project</span><span>Socket.IO</span></div>
+          <h3>Skribbl Arcade</h3>
+          <div class="tk-body"><p class="tk-lead">Multiplayer draw-and-guess, retro style.</p><p class="tk-note">Live emoji reactions and real-time drawing over WebSockets.</p></div>
+        </div>
+        <div class="tk-stub"><span>Web</span><a href="https://github.com/hemsbansal/skribbl_retro" target="_blank" rel="noopener">View on GitHub →</a></div>
+      </article>
     </div>
   </section>
 
-  <footer>hemsbansal.in</footer>
-</main>
+  <!-- Notes (desktop) -->
+  <section class="notes desk" aria-labelledby="notes-h">
+    <div class="sec-head"><h2 id="notes-h">Notes</h2></div>
+    <div class="term">
+      <div><span class="p">~/notes $</span> ls</div>
+      <a href="notes/voice-latency.html">from-8-seconds-to-1.5 <span>4 min · how a voice agent got fast</span></a>
+      <a href="notes/bluetooth-null-checks.html">two-null-checks <span>3 min · a crash only with Bluetooth</span></a>
+      <a href="notes/do-not-disturb.html">ringing-through-dnd <span>3 min · alerts on a silenced phone</span></a>
+      <div><span class="p">~/notes $</span> <span class="cursor"></span></div>
+    </div>
+    <div class="more"><a href="resume/index.html">Resume</a><a href="uses/index.html">Tools I use</a><a href="bugs/index.html">Bug log</a><a href="https://github.com/hemsbansal" target="_blank" rel="noopener">GitHub</a><a href="https://linkedin.com/in/hemsbansal" target="_blank" rel="noopener">LinkedIn</a></div>
+  </section>
+
+  <!-- Chat -->
+  <section class="view" data-view="chat" id="chat" aria-labelledby="chat-h">
+    <div class="sec-head"><h2 id="chat-h">Say hello</h2></div>
+    <div class="chat">
+      <div class="chat-top"><span class="av">H</span><div><b>Hemant</b><small>usually replies within a day</small></div></div>
+      <div class="thread" id="thread" aria-live="polite">
+        <div class="msg">Hi, I'm Hemant. Ask me something, or just email me.</div>
+      </div>
+      <div class="replies" id="replies">
+        <button type="button" data-q="now">What are you working on?</button>
+        <button type="button" data-q="role">I have a role for you</button>
+        <button type="button" data-q="stack">What's your stack?</button>
+        <button type="button" data-q="resume">Resume</button>
+      </div>
+      <div class="mail"><a href="mailto:bansalhemant55@gmail.com" id="email">bansalhemant55@gmail.com</a><button class="copy" id="copy-email" type="button">Copy</button></div>
+    </div>
+  </section>
+
+  <footer class="foot">hemsbansal.in · Jaipur</footer>
+
+  <nav class="tabbar" aria-label="Sections">
+    <a href="#home" data-tab="home"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 10v10h14V10"/></svg><span>Home</span></a>
+    <a href="#route" data-tab="route"><svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 7v4a3 3 0 0 0 3 3h6a3 3 0 0 1 3 3"/></svg><span>Route</span></a>
+    <a href="#passes" data-tab="passes"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M15 5v14" stroke-dasharray="2 2"/></svg><span>Passes</span></a>
+    <a href="#chat" data-tab="chat"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg><span>Chat</span></a>
+  </nav>
+</div>
+<script src="home.js" defer></script>
 <script src="site.js" defer></script>
 </body>
 </html>

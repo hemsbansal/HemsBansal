@@ -8,7 +8,8 @@ Everything in `public/` is the website. Files outside it (like this file and the
 
 | Path | Page |
 |---|---|
-| `public/index.html` | Home: intro, now, notes, things I've built |
+| `public/index.html` | Home. Desktop: hero, metro map, project tickets, notes, chat. Phone: an app with Home, Route, Passes and Chat tabs |
+| `public/home.css`, `public/home.js` | Homepage styles and behaviour (tabs, passes, scripted chat) |
 | `public/notes/` | Short write-ups |
 | `public/resume/` | Resume (prints cleanly) |
 | `public/uses/` | Tools I use |
@@ -25,9 +26,9 @@ Everything in `public/` is the website. Files outside it (like this file and the
 - New note: copy a file in `public/notes/`, change the text, and add a row to the Notes list in `public/index.html`.
 - Preview locally: open `public/index.html` in a browser, or run `npx serve public`
 
-## Hindi text
+## Chat answers
 
-On the homepage, each English line has a Hindi twin marked `data-hi`. Edit both when you change the text.
+The Say hello chat is scripted. Its answers live in `public/home.js` under `answers`.
 
 ## Deploying
 
