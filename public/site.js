@@ -53,6 +53,35 @@
   }
   });
 
+
+  // Light / dark toggle. Follows the system until the visitor picks one.
+  (function () {
+    var root = document.documentElement;
+    var dark = window.matchMedia('(prefers-color-scheme: dark)');
+    var sun = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+    var moon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg>';
+    function current() { return root.getAttribute('data-theme') || (dark.matches ? 'dark' : 'light'); }
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'theme-btn';
+    function paint() {
+      var isDark = current() === 'dark';
+      btn.innerHTML = isDark ? sun : moon;
+      btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.title = btn.getAttribute('aria-label');
+      var meta = document.querySelectorAll('meta[name="theme-color"]');
+      meta.forEach(function (m) { m.setAttribute('content', isDark ? '#1d1312' : '#f8efeb'); m.removeAttribute('media'); });
+    }
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      store('theme', next);
+      paint();
+    });
+    if (dark.addEventListener) dark.addEventListener('change', paint);
+    paint();
+    document.body.appendChild(btn);
+  })();
+
   // A hello for anyone who opens the console
   try {
     console.log('%ch', 'font: italic 48px Georgia, serif; color: #1f6f4a');
