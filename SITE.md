@@ -10,6 +10,7 @@ Everything in `public/` is the website. Files outside it (like this file and the
 |---|---|
 | `public/index.html` | Home. Desktop: hero, metro map, project tickets, notes, chat. Phone: an app with Home, Route, Passes and Chat tabs |
 | `public/home.css`, `public/home.js` | Homepage styles and behaviour (tabs, passes, scripted chat) |
+| `public/phone/` | The site as a phone OS (lock screen, home screen, apps). Notes, resume, bug log and tools load from the normal pages |
 | `public/notes/` | Short write-ups |
 | `public/resume/` | Resume (prints cleanly) |
 | `public/uses/` | Tools I use |

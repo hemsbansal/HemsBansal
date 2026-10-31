@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);var w=localStorage.getItem("wallpaper");if(w)document.documentElement.setAttribute("data-wallpaper",w)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hemant Bansal</title>
+<meta name="description" content="Hemant Bansal builds mobile apps and voice AI from Jaipur. This site is a phone: unlock it and look around.">
+<link rel="canonical" href="https://hemsbansal.in/phone/">
+<meta property="og:title" content="Hemant Bansal">
+<meta property="og:description" content="This site is a phone. Unlock it and look around.">
+<meta property="og:url" content="https://hemsbansal.in/phone/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b1026">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="icon" href="../icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="phone.css">
+</head>
+<body>
+<div class="stage">
+  <aside class="caption">
+    <p class="cap-site">hemsbansal.in</p>
+    <h1>Hemant Bansal</h1>
+    <p>I build mobile apps, so my site is a phone. Unlock it and look around.</p>
+    <ul class="keys">
+      <li><kbd>Enter</kbd> unlock</li>
+      <li><kbd>Esc</kbd> home</li>
+      <li><kbd>/</kbd> search</li>
+    </ul>
+    <p class="cap-alt">Prefer a normal web page? <a href="../">Classic site</a></p>
+  </aside>
+
+  <div class="device" id="device">
+    <div class="screen" id="screen" data-view="lock">
+      <div class="wallpaper" aria-hidden="true"></div>
+      <div class="island" aria-hidden="true"></div>
+
+      <div class="statusbar" aria-hidden="true">
+        <span class="sb-time" data-clock="short">9:41</span>
+        <span class="sb-icons">
+          <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+          <svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.4 6.8a6.5 6.5 0 0 1 9.2 0l-1.4 1.4a4.5 4.5 0 0 0-6.4 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.4 1.4a7.6 7.6 0 0 0-10.8 0z"/></svg>
+          <svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="17" height="8" rx="1.8"/><rect x="24.5" y="4" width="2" height="4" rx="1" opacity=".45"/></svg>
+        </span>
+      </div>
+
+      <!-- Lock screen -->
+      <section class="lock" id="lock" aria-label="Lock screen">
+        <div class="lock-top">
+          <p class="lock-date" data-clock="date">Sunday, 1 November</p>
+          <p class="lock-time" data-clock="big">9:41</p>
+          <p class="lock-place">Jaipur, India</p>
+        </div>
+        <div class="notifs" id="notifs"></div>
+        <button class="unlock" id="unlock" type="button"><span>Swipe up or tap to open</span></button>
+      </section>
+
+      <!-- Home screen -->
+      <section class="home" id="home" aria-label="Home screen">
+        <div class="widgets">
+          <button class="widget w-now" type="button" data-open="about">
+            <span class="w-label">Now</span>
+            <span class="w-big">Leading a team of five</span>
+            <span class="w-small"><i class="dot"></i>Open to new work</span>
+          </button>
+          <div class="widget w-clock" aria-live="off">
+            <span class="w-label">Jaipur</span>
+            <span class="w-big" data-clock="short">9:41</span>
+            <span class="w-small" id="mood">Probably debugging</span>
+          </div>
+        </div>
+        <div class="grid" id="grid"></div>
+        <button class="search-pill" id="search-btn" type="button"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.2-4.2"/></svg>Search</button>
+        <div class="dock" id="dock"></div>
+      </section>
+
+      <!-- App window -->
+      <section class="window" id="window" aria-live="polite" hidden>
+        <div class="win-body" id="win-body"></div>
+      </section>
+
+      <!-- Search -->
+      <div class="spotlight" id="spotlight" hidden>
+        <div class="sp-box">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.2-4.2"/></svg>
+          <input id="sp-input" type="search" placeholder="Search apps and notes" autocomplete="off" aria-label="Search">
+          <button type="button" id="sp-cancel">Cancel</button>
+        </div>
+        <ul class="sp-results" id="sp-results"></ul>
+      </div>
+
+      <button class="home-bar" id="home-bar" type="button" aria-label="Go to home screen"><span></span></button>
+    </div>
+  </div>
+</div>
+<noscript><p class="noscript">This site needs JavaScript to run as a phone. <a href="../">Open the classic site</a>.</p></noscript>
+<script src="phone.js" defer></script>
+</body>
+</html>
